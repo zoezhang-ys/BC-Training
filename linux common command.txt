@@ -1,0 +1,115 @@
+#########################
+#     Linux commands    #
+#########################
+
+# print working directory
+pwd
+# user name
+whoami
+# manual
+man <command>
+# help
+help help
+# matching
+* any len char
+? single char
+[..] char defined 
+# sudo
+super user do
+
+--- file permission ---
+ls -l <file_name>
+<file type> <user> <group> <others> read,write,execute
+<hard_link> <owner> <group> <file size><last mod time>..
+
+# Change permission
+chmod <value> <file>
+ie. chmod u=rwx,g=rwx,o=rwx [file_name]
+chmod go-rx myfile # subtract rx from g&o
+chmod g+rx myfile # add rx to g
+755 #-rwxr-xr-x
+644 #-rw-r--r--
+
+--- folder and file ---
+# create directory
+mkdir dir1 dir2 ..
+
+--- save output to file --
+> write to
+ie. ls > output.txt
+>> expand to
+ie. echo "hey a new line" >> output.txt
+< read from keyboard or file
+| lhs output as rhs input
+
+#show output.txt
+# concatenate
+cat output.txt
+cat -n output.txt # with line number
+less output.txt
+more output.txt
+G-end of file
+g-top of file
+/chars-search
+?char-backward search
+q-quit
+
+--- create small file ---
+echo "This is a test" > test_1.txt
+echo "This is a second test" > test_2.txt
+echo "This is a third test" > test_3.txt
+
+--- join the files ---
+cat test_1.txt test_2.txt test_3.txt
+cat test_?.txt
+cat test_*
+
+--- move file/folder ---
+mv <from_dir> <to_dir>
+# can do rename too, change name to file2
+mv file1.txt file2.txt
+mv "folder 1" folder_1
+
+--- copy file/folder ---
+cp <from_dir><to_dir>
+scp secure cp
+scp <username>@<servername>:<source> <username>@<servername>:<dest>
+
+--- remove file ---
+rm <dir1> <dir2>..
+
+--- remove dir ---
+# empty
+rmdir folder
+# non empty
+rm -r folder
+
+--- ssh ---
+ssh <username>@<servername> <command>
+
+--- zip ---
+tar -cf <files>
+
+--- unzip ---
+tar -xf <zip_file>
+
+--- word count ---
+wc -l <file> #line count
+wc -w <file> #word count
+
+--- grep global regular expression print ---
+#search keyword print line with it
+grep 'keyword' <file> 
+-i ignore case distinction
+-v print line without keyword
+
+--- find ---
+find <file under this dir> condition
+find ~ -name 'xxx.txt>
+find ~ -size +100M
+find ~ -mtime -30 #last mod time less than 30 days
+
+--- sort ---
+sort <file>
+#sort by column 3(key3) as number (default as char)
+sort -k3 -n 

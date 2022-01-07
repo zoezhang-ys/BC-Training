@@ -1,0 +1,70 @@
+#######################
+#     Git commands    #
+#######################
+
+#unable to connect
+git config --global http.proxy
+git push -u origin master
+
+#create branch
+git branch zoezhang
+#or
+
+git checkout -b new-feature main
+
+#checkout branch
+git checkout zoezhang
+
+#check which branch's on
+git status
+
+
+#modify and commit
+..
+git add xx.xx
+git commit -m ""
+
+
+#push, can't use -u. have to use --set-upstream
+#first time
+git push --set-upstream origin zoezhang
+#future 
+git push
+
+
+#submit pull request to merge changes to source
+
+#if i control merge the branch once done
+git checkout master
+# merge the branch to master!
+git merge <branch>
+#otherwise it's like pull
+
+===================================
+#show current branches
+git branch
+git branch --merged/no-merged
+-----------------------------------
+#add new branch
+git branch <branch>
+-----------------------------------
+#delete branch
+git branch -d <branch>
+-----------------------------------
+#switch branch
+git checkout <branch>
+#create new branch and switch to the new branch
+git checkout -b <branch>   
+-----------------------------------
+#merge other branch to current branch
+git merge <branch>
+#create a new commit in current branch
+git merge --no-ff <branch>
+-----------------------------------
+#fix conflict  when merge
+git mergetool –tool $tool
+git config merge.tool $tool
+-----------------------------------
+#work with remote
+git branch –u <remote>/<branch>
+git push <remote> <branch>
