@@ -159,30 +159,58 @@ Matrix_Combined = cbind(Matrix1, Matrix2)
 
 # ---------------------------------#
 
-# Array
-a = array(c('green','yellow', 'blue','pink'),dim = c(3,3,2))
+# Array - 3D
+a = array(c(1:24), dim = c(4,3,2))
 print(a)
 '''
 , , 1
-
-     [,1]     [,2]     [,3]   
-[1,] "green"  "pink"   "blue" 
-[2,] "yellow" "green"  "pink" 
-[3,] "blue"   "yellow" "green"
+     [,1] [,2] [,3]
+[1,]    1    5    9
+[2,]    2    6   10
+[3,]    3    7   11
+[4,]    4    8   12
 
 , , 2
-
-     [,1]     [,2]     [,3]    
-[1,] "yellow" "green"  "pink"  
-[2,] "blue"   "yellow" "green" 
-[3,] "pink"   "blue"   "yellow"
+     [,1] [,2] [,3]
+[1,]   13   17   21
+[2,]   14   18   22
+[3,]   15   19   23
+[4,]   16   20   24
 '''
 
+# access, dim and len the same as M
+
+# Loop
+for (x in a){
+    print(x)
+}
+
 # ---------------------------------#
-# Factor
+# Factor - getting the NOT REPEATing item
+# can also set levels by: ", levels = c(..) "
+my_factor = factor(c(2,3,1,1,3,1,6,3,4,5,1,4))
+'''
+ [1] 2 3 1 1 3 1 6 3 4 5 1 4
+Levels: 1 2 3 4 5 6
+'''
 
+# print level
+levels(my_factor)
 
+# Changing accessing length no diff
 
 # ---------------------------------#
-
 # Data Frame
+
+my_table = data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+'''
+  Training Pulse Duration
+1 Strength   100       60
+2  Stamina   150       30
+3    Other   120       45
+'''
+

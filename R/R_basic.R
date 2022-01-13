@@ -188,3 +188,35 @@ rep_vec = rep(c(1,2,3), times = c(5,2,1))
 
 # Checking data type
 print(class(my_var))
+
+# loading data
+'''
+my_data = xxx loading or dataset
+
+# return min max mean median value
+max(my_data$col_name)
+min(my_data$col_name)
+mean(my_data$col_name)
+median(my_data$col_name)
+
+# Mode
+# The mode value is the value that appears the most number of times.
+names(sort(-table(my_data$col_name)))[1]
+
+# Percentile
+
+# c() specifies which percentile you want
+quantile(Data_Cars$wt, c(0.75))
+
+# return min max position/index
+which.max(my_data$col_name)
+which.min(my_data$col_name)
+
+# return row name
+rownames(my_data)[which.max(my_data$col_name)]
+rownames(my_data)[which.min(my_data$col_name)]
+
+'''
+# Reading files
+data = read.csv("file_path.csv")
+
