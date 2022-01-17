@@ -1,0 +1,87 @@
+/* ------------------------------------------------
+1.0 Selectors
+
+p{}
+
+.class{}
+
+#ID{}
+
+p.class{}
+
+etc
+
+https://www.w3schools.com/cssref/css_selectors.asp
+
+For the element within, such as the list item <li> 
+inside the unordered list <ul> use "ul > li" or
+even with ":first-child" 0r ":nth-last-child()"
+
+For the element follow after a specific element,
+for instance, a header2 after a paragraph "p + h2" 
+
+Select element with specific attributes or property,
+use the "[]", for example "li[href *= google.com]"
+
+For input like check-box/form, can do "input:xxx".
+For example, "input:checked" or "input:focus"
+
+Or for hover, then do "xx:hover", like "h1:hover"
+
+---------------------------------------------------
+2.0 General Attribute
+
+color: rgb/rgbs/hex/hsl
+
+background: 
+background-color:
+opacity: make the entire element transparent
+rgba: just the background color transparent
+
+background-image: url("bgdesert.jpg");
+background-repeat:repeat-x;(horizontally) 
+                  repeat-y;(vertically)
+                  no-repeat
+background-attachment:fixed; fix as backgroung
+                      scroll; go with the scroll
+background-position: right top;
+background : can put all together.
+
+boarder:
+border-top/left/right/bottom-style: dotted/dashed/solid/ridge/...
+border-width/color:
+border-radius: 3px
+
+margin and padding:
+4: top right bottom left 
+3: top left&right bottom
+2: top&bottom left&right
+1: all
+
+Page
+┍———————————————————————┑
+|         Margin        |
+|   ┍—————Border————┑   |
+|   |    Padding    |   |
+|   |    ┍—————┑    |   |
+|   |    |  C  |    |   |
+|   |    ┗—————┙    |   |
+|   |               |   |
+|   ┗———————————————┙   |
+|                       |
+┗———————————————————————┙
+
+text:
+
+text-align: justify/left/right/center; #fix entire row to page width
+text-align-last: justify/left/right/center; #fix the last word in text
+text-decoration: overline/line-through/underline
+text-transform: uppercase/lowercase/capitalize
+text-indent: xxpx;
+
+
+*/
+
+[href]{
+    color:darkgray;
+}
