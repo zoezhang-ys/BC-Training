@@ -1,5 +1,9 @@
 <!-- For html, it words on both IOS platform and Andriod, 
-    less cost and more time efficient -->
+    less cost and more time efficient
+
+    Ref: https://cdn.cs50.net/2021/fall/lectures/8/src8.pdf
+
+-->
 
 <!DOCTYPE html>
 <!-- Define the html and the language of the page -->
@@ -13,7 +17,9 @@
         <!-- Styling -->
         <!-- type{}     class .classname    id # -->
         <!-- Or -->
+        <!-- Linking the CSS file and JS file to this html -->
         <link href="log_css.css" rel="stylesheet">
+        <script src="log_js.js"></script>
 
         <!-- the content in the web tab -->
         <title>
@@ -24,7 +30,7 @@
     <!-- The content on the page -->
     <body>
         <!-- load image to page, load alt text when image not showing-->
-        <img src ='welcome_img.png' alt="welcome image">
+        <img src ='welcome_img.png' alt="welcome image" title="I am an image">
         <!-- for videos:
         <video autoplay loop muted width="1200"> 
             <source scr="hello.mp4" type="video/mp4">
@@ -62,8 +68,7 @@
             src="https://www.youtube.com/embed/2VauFS071pg" 
             title="YouTube video player" frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; 
-            encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
+            encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
             </iframe>
         </p>
         
@@ -104,12 +109,30 @@
         </table>
 
         <!-- Form -->
-        <form action="https://www.google.com/search" method="get">
+        <form action="https://www.google.com/search" method="get" id="get_search">
             <!-- a text box -->
             <input name="q" autocomplete="off" autofocus placeholder="Enter..." type="text">
             <!-- a submit button -->
             <input type="submit">
         </form>
+
+
+        <!-- Interaction to greet using JS-->
+        <form id="say_hello">
+            <input autocomplete="off" id="name" placeholder="please enter name" type="text">
+            <input type="submit">
+        </form>
+        <!-- <script src="log_js.js"></script> -->
+        <p>
+
+
+        </p>
+        <button id="red">R</button>
+        <button id="green">G</button>
+        <button id="blue">B</button>
+        <button id="clear">Clear</button>
+
+
 
     </body>
 </html>
