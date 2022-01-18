@@ -59,34 +59,27 @@ document.querySelector('form').addEventListener('submit', function (e){
 */
 
 
-//var body = document.querySelector('body');
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    var body = document.querySelector('body');
+
     document.querySelector('#red').addEventListener('click', function() {
-        body = document.querySelector('body');
         body.style.backgroundColor = 'red';
     });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#green').addEventListener('click', function() {
-        body = document.querySelector('body');
         body.style.backgroundColor = 'green';
     });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#blue').addEventListener('click', function() {
-        body = document.querySelector('body');
         body.style.backgroundColor = 'blue';
     });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#clear').addEventListener('click', function() {
-        body = document.querySelector('body');
         body.style.backgroundColor = 'white';
     });
+
 });
 
 
