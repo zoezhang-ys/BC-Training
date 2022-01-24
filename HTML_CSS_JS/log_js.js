@@ -31,6 +31,21 @@ Cannot re-declare a variable using let or const.
 let/const - block view
 var - global view
 
+// Note: the data type of Array and other data structure
+// are object. 
+
+typeof null                  // Returns "object"
+typeof "John"              // Returns "string"
+typeof 3.14                // Returns "number"
+typeof true                // Returns "boolean"
+
+// To check within:
+
+// check if an object is array
+function isArray(myArray) {
+  return myArray.constructor === Array;
+}
+
 1.1 Var type conversions --------------------------------
 
 ------ To Booleans:
@@ -252,6 +267,26 @@ let myCar = new Car("Ford", 2014);
 
 let myCar1 = new Car("Ford", 2014);
 
+
+10.0 Arrow Function
+
+let myFunction = (a, b) => a * b;
+
+Org: 
+var hello;
+hello = function() {
+  return "Hello World!";
+}
+hello();
+
+hello = () => {
+  return "Hello World!";
+}
+
+hello = () => "Hello World!";
+
+hello = (val) => "Hello " + val;
+hello = val => "Hello " + val;
 
 10.0 JSON ----------------------------------------------- 
 
