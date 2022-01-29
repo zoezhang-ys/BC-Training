@@ -49,7 +49,7 @@ function isArray(myArray) {
 1.1 Var type conversions --------------------------------
 
 ------ To Booleans:
-"Falsy" values: "false", null, undefined, 0, NaN, '' 
+"Falsy" values: null, undefined, 0, NaN, '' 
 var x = 40
 !!x; // true
 Boolean(x);
@@ -89,6 +89,12 @@ const pattern = /e/;
 pattern.test("this return true if e is inthe string");
 same:
 /e/.test("The best things in life are free!");
+
+Regular expression:
+? single
+* multiple
+^ startwith
+$ endwith
 
 3.0 Comparison operator ---------------------------------
 == equal to
