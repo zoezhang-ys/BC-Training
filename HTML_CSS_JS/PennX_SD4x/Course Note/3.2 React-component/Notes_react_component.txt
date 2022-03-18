@@ -1,0 +1,19 @@
+Components define properties, event-based state variable, and callback functions.
+render() is used to render its HTML.
+
+
+
+
+React 4 important parts:
+1. render
+2. proterties (this.props) - set when component is initialized
+    - should not be modified afterward
+3. state(this.state) - change during rendering
+    - this.state to define
+    - this.useState to use
+    - this.setState to modify
+4. Lifecycle
+    - state lifecycle: mounting (created), updating and unmounting (destoried)
+    - mounting: constructor, componentWillMount, componentDidMount
+    - updating: componentWillReceiveProps, shouldComponentUpdate, componentWillUpdate, componentDidUpdate
+    - unmounting: componentWillUnMount

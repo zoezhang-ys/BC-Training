@@ -1,0 +1,12 @@
+Mouse:
+    click,dbclick, mousedown, mouseup, mouseover, mouseout
+
+Keyboard:
+    keydown, keypress, keyup
+
+Form:
+    focus, blur, change, reset, submit
+
+Window/Element:
+    load, resize, scroll, unload
+    

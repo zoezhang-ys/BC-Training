@@ -1,0 +1,16 @@
+===== Why React? =====
+
+Modularity: organize code into reusable components that can work together.
+
+Lifecycle maintenance: modifying component based on state; event listeners; simplified conditional rendering
+
+JSX (JS XML Syntax Transform): write HTML within JavaScript
+
+===== Component =====
+===== Vitrual DOM =====
+Selective render/re-render a subnode/subtree
+Step 1: Diff: to determine which nodes within DOM have changed
+Step 2: Reconciliation: to update te nodes that are affected
+
+<script src="https://fb.me/react-with-addons-0.14.3.js"></script>
+<script src="https://fb.me/react-dom-0.14.3.js"></script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" /></script>
+    <title>Hello World</title>
+    <script src="..\3.1 React\react.js"></script>
+    <script src="..\3.1 React\react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="container"> </div>
+    <script type="text/babel">
+      // define the component
+      class TimesViewed extends React.Component {
+        // ------------------------------------------
+        // function called when component is created - props = properties
+         constructor(props) {
+            super(props);
+            var timesViewed = 0;
+            // if timeViewed exists
+            if (localStorage.timesViewed) {
+                // then get the previous number
+                timesViewed = localStorage.timesViewed;
+            }
+            // increment
+            timesViewed++;
+            // access the state, and set the property"numViews" to the variable timesViewed
+            this.state = { numViews: timesViewed };
+            // update localstorage
+            localStorage.timesViewed = timesViewed;
+         }
+         // ------------------------------------------
+
+         render() {
+           // return text in bold, with its property "numViews"
+           return <b>Hello {this.state.numViews}</b>;
+         }
+      }
+
+      ReactDOM.render(
+        <TimesViewed />,
+        document.getElementById('container')
+      );
+
+    </script>
+  </body>
+</html>

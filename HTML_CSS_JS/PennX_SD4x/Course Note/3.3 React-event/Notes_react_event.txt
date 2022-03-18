@@ -1,0 +1,4 @@
+A state typically changes in response to some user action or "event".
+We can bind an event to a callback function within a React component.
+That component can then change state using its setState function.
+This will automatically re-render the component and any other affected component.

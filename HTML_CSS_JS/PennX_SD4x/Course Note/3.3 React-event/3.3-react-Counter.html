@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" /></script>
+    <title>Hello World</title>
+    <script src="..\3.1 React\react.js"></script>
+    <script src="..\3.1 React\react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+
+    <div id='container'></div>
+
+    <script type="text/babel">
+
+      class Counter extends React.Component { 
+
+        // called when component is created
+        constructor(props) {
+          super(props);
+          this.state = { count : 0 };
+        }
+
+        incrementCount () {
+          // when modifying the state, always use setState function
+          this.setState({ 
+            count: this.state.count + 1 
+          });
+        }
+          
+        render () { // invoked when setState is called
+          return ( 
+            <div>Count: { this.state.count } 
+            <button type = "button" onClick = { this.incrementCount.bind(this) } > Increment </button> </div>
+          );
+        } 
+      }; 
+
+      ReactDOM.render(
+        <div>
+          <Counter />
+        </div>,
+        document.getElementById('container'))
+      ;
+    </script>
+
+  </body>
+</html>

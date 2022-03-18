@@ -1,0 +1,187 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Current Date</title>
+    </head>
+
+    <body>
+        <div>
+            Example 1:
+            The current date time is <span id="dateTime"> </span>
+            <br>
+            <br>
+            Example 2:
+            Page has been visited <span id="visit_count"> </span> times.
+            <br>
+            <br>
+            Example 3:
+            Page has been visited <span id="visit_count_3"> </span> times.
+            Last visit was <span id="lastVisitDate"> </span>.
+            <br>
+            <br>
+            Example 4: Button
+            <button id="click_button"> Click! </button>
+            Button clicked for <span id="button_count">0 times</span>.
+            <br>
+            <br>
+            Example 5: Style
+            <div id="bold_color">BOLD and Color</div>
+            <br>
+            <div id="bgcolor">Background Color</div>
+            <br>
+            <div class="sample_text">Today is a beautiful day.</div>
+            <div class="sample_text">How's the weather.</div>
+            <br>
+            <br>
+            Example 6: Keyboard input
+            <br>
+            <input id="name_input"></input>
+            <br>
+            Hello, <span id="name_field">!</span>
+            
+        </div>
+        
+        <script>
+            // ===================== Example 1 =====================
+            var dateTimeField = document.getElementById('dateTime');
+            // show value on page
+            dateTimeField.innerHTML = new Date();
+
+            // ===================== Example 2 =====================
+            var timesVisited = 0;
+            // check if timesVisited exists
+            if (localStorage.timesVisited) {
+                // exist - read stored value
+                timesVisited = parseInt(localStorage.timesVisited);
+            }
+            timesVisited += 1;
+            // save the value
+            localStorage.setItem('timesVisited', timesVisited);
+
+            // get the position on DOM and show info
+            var visit_count = document.getElementById("visit_count");
+            visit_count.innerHTML = timesVisited;
+
+            if (timesVisited > 10){
+                //modify the background color
+                visit_count.style.backgroundColor = "red";
+            }
+
+
+            // ===================== Example 3 =====================
+            /* Note: conversion between JSON and string
+            // convert object => json string
+            JSON.stringify(my_object);
+
+            // convert json string => object
+            JSON.parse(json_string);
+            */
+
+            var timesVisited = 0;
+            var lastVisitDate = 'never';
+
+            // check if lastVisited exists
+            if (localStorage.lastVisit) {
+                // exist - get the stored object into lastVisit
+                var lastVisit = JSON.parse(localStorage.lastVisit);
+                // read value of out local storage
+                timesVisited = lastVisit.numVisits;
+                lastVisitDate = lastVisit.date;
+            }
+            // show the info
+            timesVisited += 1;
+            document.getElementById('visit_count_3').innerHTML = timesVisited;
+
+            document.getElementById('lastVisitDate').innerHTML = lastVisitDate;
+
+            // save the value into JSON
+            var myLastVisit = { };
+            myLastVisit.date = new Date();
+            myLastVisit.numVisits = timesVisited;
+
+            console.log(myLastVisit);
+            localStorage.lastVisit = JSON.stringify(myLastVisit);
+
+            // ===================== Example 4 =====================
+            var clicks = 0;
+
+            // define what to do:
+            function clickHandler(){
+                clicks ++;
+                var num_click_span = document.getElementById("button_count");
+                if (clicks == 1){
+                    num_click_span.innerHTML = 'once';
+                } else {
+                    num_click_span.innerHTML = clicks + ' times';
+                }
+            }
+
+            // define what to do when button is clicked
+            var click_button = document.getElementById("click_button");
+            // Event-Driven Programming (async) - callback functions - notify when update
+            click_button.addEventListener('click', clickHandler);
+
+            // ===================== Example 5 =====================
+            // <div id="bold_color">BOLD and Color</div>
+            // <div id="bgcolor">Background Color</div>
+            // <div class="sample_text">Today is a beautiful day.</div>
+            function b_and_c(){
+                var texts = document.getElementsByClassName('sample_text');
+
+                for (var i = 0; i < texts.length; i++){
+                    texts[i].style.color = "purple";
+                    texts[i].style.fontWeight = 'bold';
+                }
+            }
+
+            function bg_c(){
+                var texts = document.getElementsByClassName('sample_text');
+
+                for (var i = 0; i < texts.length; i++){
+                    texts[i].style.backgroundColor = 'grey';
+                }
+            }
+
+            function restore(){
+                // returns a collection of html nodes
+                var texts = document.getElementsByClassName('sample_text');
+
+                for (var i = 0; i < texts.length; i++){
+                    texts[i].style.color = "black";
+                    texts[i].style.fontWeight = 'normal';
+                    texts[i].style.backgroundColor = 'transparent';
+                }
+            }
+
+            var mouse_bc = document.getElementById('bold_color');
+            var mouse_bg = document.getElementById('bgcolor');
+            mouse_bc.addEventListener('mouseover', b_and_c);
+            mouse_bc.addEventListener('mouseout', restore);
+            mouse_bg.addEventListener('mouseover', bg_c);
+            mouse_bg.addEventListener('mouseout',restore);
+
+            // ===================== Example 6 =====================
+            // <input id="name_input"></input>
+            // <br>
+            // Hello, <span id="name_field">!</span>
+            // e - event
+            function name_input_handler(e){
+                // determine which key did the user press
+                if (e.keyCode == 13){ // 13 - Enter
+                    var name_input = document.getElementById('name_input');
+                    var name_field = document.getElementById('name_field');
+                    // set the field value to user input
+                    name_field.innerHTML = name_input.value;
+                    name_field.style.backgroundColor = 'cyan';
+                    name_field.style.textTransform = 'capitalize';
+                }
+            }
+            // since it's listening whether or not the input is selected, use document
+            document.addEventListener('keyup', name_input_handler);
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" /></script>
+    <title>Hello World</title>
+    <script src="..\3.1 React\react.js"></script>
+    <script src="..\3.1 React\react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+
+    <div id='container'></div>
+
+    <script type="text/babel">
+      class LikeButton extends React.Component {
+
+        constructor(props) {
+          super(props);
+          this.state = { liked : false };
+        }
+      
+
+        toggle() {
+          this.setState({liked: !this.state.liked});
+        }
+
+        render() {
+          var name = this.props.name;
+          var txt = this.state.liked ? 'Unlike' : 'Like';
+          //var color = this.state.liked ? '#3b5998' : '#627AAC';
+          var color = this.state.liked ? 'red' : 'black';
+          var bold = this.state.liked ? 'bold' : 'normal';
+          return (
+            <p>
+            <span style={{color: color, fontWeight: bold}}>
+              {name} </span><span onClick={this.toggle.bind(this)}> {'\ud83d\udc4d' + txt}
+            </span>
+            </p>
+          );
+        }
+      };
+
+      ReactDOM.render(
+        <div>
+          <LikeButton name="Java" />
+          <LikeButton name="JavaScript" />
+        </div>,
+        document.getElementById('container'));
+    </script>
+
+  </body>
+</html>
