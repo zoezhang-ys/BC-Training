@@ -1,8 +1,5 @@
-library(tidyverse)
-library(dslabs)
-
-data(murders)
-
-murders %>%
-    ggplot(aes(population, total, label = abb, color = region)) +
-    geom_label()
+a <- 5
+b <- 10
+c <- 2
+print(ls())
+print((-b + sqrt(b^2 - 4*a*c))/(2*a))
