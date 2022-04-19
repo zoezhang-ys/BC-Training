@@ -1,0 +1,79 @@
+let name: string;
+let age: number;
+let isStudent: boolean | string;
+let hobbies: string[];
+let random: any;
+//tuple: fix type and #ele in declaration
+let role: [number, string];
+// define function
+let printName: (name:string) => void;
+
+printName = function (name){
+  console.log(name);
+}
+printName("Zoe");
+
+// ---------- define object ----------
+type Person_obj = {
+  name: string;
+  age: number;
+  // optional element
+  status?: string;
+};
+
+let person: Person_obj = {
+  name: "Zoe",
+  age : 24
+  // status is an optional element
+};
+
+let my_team: Person_obj[];
+
+// extending type
+type X = {
+  a: string;
+  b: number;
+};
+
+// to have both X and Y's properties
+type Y = X & {
+  c: string;
+  d: number;
+}
+
+let y:Y = {
+  a: "hello",
+  b: 5,
+  c: "world",
+  d: 20
+}
+
+// ---------- define function ----------
+/*
+let printName(name: String) = {
+  console.log(name);
+}
+*/
+
+
+// Intercace
+interface Person {
+  name: string;
+  age: number;
+  // optional element
+  status?: string;
+};
+
+interface Guy extends Person{
+  profession: string;
+}
+
+// mix interface with type
+type Z = Person & {
+  e: string;
+  f: string;
+};
+
+interface dude extends X {
+  school: string;
+}
