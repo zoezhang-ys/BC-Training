@@ -51,5 +51,24 @@
     flex-direction: column;
     width: 47.5%;
     padding: 15px;
-    background-color: rgb(50, 195, 205);
-  }
+}
+
+.todos_single {
+    display: flex;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 15px;
+    background-image: url("https://img.freepik.com/free-photo/crumpled-yellow-paper-background-close-up_60487-2390.jpg?size=626&ext=jpg");
+    transition: 0.2s;
+}
+
+.todos_single-text {
+    margin: auto;
+    font-family:'Courier New', Courier, monospace;
+    flex: 1;
+}
+
+.todos_single-text:focus {
+    outline:none;
+    box-shadow: inset 0 0 3px grey;
+}
